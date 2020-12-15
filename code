@@ -1,0 +1,29 @@
+import requests
+'''response = requests.get('')'''
+#below is an xml request and here we are triggering xmlrequest if we can to trigger an json the syntax is
+"""xml = <SaveContactResponse xmlns="http://schemas.datacontract.org/2004/07/SmashFly.WebServices.ContactManagerService.v2">
+    <ContactId>1168255</ContactId>
+    <Errors i:nil="true" xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    <HasErrors>false</HasErrors>
+    </SaveContactResponse>
+    headers = {'Content-Type': 'application/xml'}
+response = requests.post('http://www.my-website.net/xml', data=xml , headers=headers)
+status = response.status_code
+print(status)
+if status == 200 :
+    print('succuss')
+else:
+    print("404")
+xml.close()
+    """
+for x in range(2):
+    xml = open('C:\\Users\\Mouni\\Desktop\\Phython\\sample_xmlRequest.txt')
+    headers = {'Content-Type': 'application/xml'}
+    response = requests.post('http://www.my-website.net/xml', headers=headers)
+    status = response.status_code
+    xml.close()
+
+if status == 200:
+    print('succuss')
+else:
+    print("404")
